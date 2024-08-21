@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Programmeren4_Hogent_Apen", "Programmeren4_Hogent_Apen\Programmeren4_Hogent_Apen.csproj", "{2ECCF6FB-5C28-4CCB-9EF3-19E7A08DA121}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2ECCF6FB-5C28-4CCB-9EF3-19E7A08DA121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2ECCF6FB-5C28-4CCB-9EF3-19E7A08DA121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2ECCF6FB-5C28-4CCB-9EF3-19E7A08DA121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2ECCF6FB-5C28-4CCB-9EF3-19E7A08DA121}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {820E2E1E-BC3D-491B-81D1-05FE2F1A2B54}
+	EndGlobalSection
+EndGlobal

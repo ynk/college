@@ -1,0 +1,74 @@
+﻿<Page x:Class="ComicCatalog.SerieWindow.SerieWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ComicCatalog.SerieWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SerieWindow">
+
+    <Grid Style="{StaticResource DarkMode}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Image for background-->
+        <Image Grid.Column="1" Source="/Icons/Series.png" HorizontalAlignment="Center" Style="{StaticResource Image}"/>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            
+            <Label Content="Serie Name:" Style="{StaticResource InputLabels}"/>
+            <TextBox x:Name="txtSerie" Grid.Column="1" TextChanged="TxtSerie_TextChanged" Style="{StaticResource InputTextBox}"/>
+
+            <DataGrid x:Name="dgSerie" Grid.Row="1" Grid.ColumnSpan="2" AlternatingRowBackground="#40454a" IsReadOnly="True" SelectionChanged="DgSerie_SelectionChanged" Style="{StaticResource DataGrid}">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                        <Setter Property="BorderBrush" Value="black"/>
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Background" Value="#252a2e"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Serie Name" Binding="{Binding Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Button x:Name="BtnAddSerie" Grid.Row="1"  Grid.Column="2" Click="BtnAddSerie_Click" Style="{StaticResource ManageButtons}">Add</Button>
+            <Button x:Name="BtnUpdateSerie" Grid.Row="2" Grid.Column="2" Click="BtnUpdateSerie_Click" Style="{StaticResource ManageButtons}">Update</Button>
+            <Button x:Name="BtnRemoveSerie" Grid.Row="3"  Grid.Column="2" Click="BtnRemoveSerie_Click" Style="{StaticResource ManageButtons}">Remove</Button>
+        </Grid>
+    </Grid>
+</Page>

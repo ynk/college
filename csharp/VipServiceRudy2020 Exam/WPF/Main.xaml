@@ -1,0 +1,218 @@
+﻿<Window x:Class="WPF.Main"
+        xmlns:dotNetKitControls="clr-namespace:DotNetKit.Windows.Controls;assembly=DotNetKit.Wpf.AutoCompleteComboBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF" xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Main" Height="450" ResizeMode="NoResize" Width="800">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="dateCheckBox" />
+    </Window.Resources>
+    <Grid>
+        <TabControl >
+            <TabItem Name="NewReservation" Header="Nieuwe Reservatie">
+                <Grid  Name="GridNewReservation" Margin="0,0,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <dotNetKitControls:AutoCompleteComboBox
+                        Name="AutoCompleteComboBox"
+                        SelectedValuePath="Id"
+                        TextSearch.TextPath="Naam"
+                        ItemsSource="{Binding Path=Naam}"
+                        SelectedIndex="0"
+                        Margin="48,0,0,0" VerticalAlignment="Center"  RenderTransformOrigin="0.24,0.457" HorizontalAlignment="Left" Width="204" Height="24">
+                            <dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Naam}" FontWeight="Bold" />
+                                        <TextBlock>
+                                        ID (<Run Text="{Binding Klantnummer}"/>) | 
+                                        Adres(<Run Text="{Binding Adres}"/>)
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                        </dotNetKitControls:AutoCompleteComboBox>
+                        <Label Content="Klant:" HorizontalAlignment="Left" Margin="4,17,0,17"/>
+                        <Label Content="Voertuig:" HorizontalAlignment="Left" Margin="322,0,0,0" Height="26" VerticalAlignment="Center"/>
+                        <dotNetKitControls:AutoCompleteComboBox
+                        Name="AutoCompleteComboBoxVoertuigen"
+                        SelectedValuePath="Id"
+                        TextSearch.TextPath="Naam"
+                        ItemsSource="{Binding Path=Naam}"
+                        SelectedIndex="0"
+                        Margin="385,0,98,0" VerticalAlignment="Center" Height="24">
+                            <dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Naam}" FontWeight="Bold" />
+                                        <TextBlock>
+                                        Id:  (<Run Text="{Binding Id}"/>) |
+                                        Prijs/h:  (<Run Text="{Binding EersteUur}"/>)
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                        </dotNetKitControls:AutoCompleteComboBox>
+                    </Grid>
+                    <Grid Grid.Row="1">
+                        <dotNetKitControls:AutoCompleteComboBox
+                        Name="AutoCompleteComboBoxArragement"
+                        SelectedValuePath="Id"
+                        TextSearch.TextPath="Naam"
+                        ItemsSource="{Binding Path=Naam}"
+                        SelectedItem="{Binding SelectedItem}"
+                        SelectedValue="{Binding SelectedValue}"
+                        SelectedIndex="0"
+                        Margin="97,21,582,0" VerticalAlignment="Top" Height="22" Grid.Row="1">
+                            <dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Naam}" FontWeight="Bold" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                        </dotNetKitControls:AutoCompleteComboBox>
+                        <Label Content="Arrangement:" HorizontalAlignment="Left" Margin="10,17,0,17" Grid.Row="1"/>
+                        <dotNetKitControls:AutoCompleteComboBox
+                        Name="AutoCompleteComboBoxLocatiesStart"
+                        SelectedValuePath="Id"
+                        TextSearch.TextPath="LocatieNaam"
+                        ItemsSource="{Binding Path=LocatieNaam}"
+                        SelectedIndex="0"
+                        Margin="351,21,330,0" VerticalAlignment="Top" Grid.Row="1">
+                            <dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding LocatieNaam}" FontWeight="Bold" />
+                                        <TextBlock>
+                                        Id(  (<Run Text="{Binding Id}"/>)
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                        </dotNetKitControls:AutoCompleteComboBox>
+                        <Label Content="Start Locatie:" HorizontalAlignment="Left" Margin="273,19,0,15" Grid.Row="1"/>
+                        <dotNetKitControls:AutoCompleteComboBox
+                        Name="AutoCompleteComboBoxLocatiesStop"
+                        SelectedValuePath="Id"
+                        TextSearch.TextPath="LocatieNaam"
+                        ItemsSource="{Binding Path=LocatieNaam}"
+                        SelectedIndex="0"
+                        Margin="581,21,100,0" VerticalAlignment="Top">
+                            <dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding LocatieNaam}" FontWeight="Bold" />
+                                        <TextBlock>
+                                        Id(<Run Text="{Binding Id}"/>)
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+
+                        </dotNetKitControls:AutoCompleteComboBox>
+                        <Label Content="Eind Locatie:" HorizontalAlignment="Left" Margin="485,19,0,15"/>
+                    </Grid>
+                    <Grid Row="2">
+                        <xctk:DateTimePicker Name="StartDate" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Center" Width="264" />
+                        <Label Content="Datum Reservatie:" HorizontalAlignment="Left" Margin="10,17,0,17"/>
+                        <ComboBox Name="uuren" HorizontalAlignment="Left" Margin="546,17,0,0" VerticalAlignment="Top" Width="120"/>
+                        <Label Content="Uuren Reservatie:" HorizontalAlignment="Left" Margin="439,14,0,20"/>
+                    </Grid>
+                    <Grid Row="3">
+                        <Button Content="Maak Reservatie aan" Click="MaakReservatieaan_click" HorizontalAlignment="Left" Margin="22,0,0,0" Grid.Row="3" VerticalAlignment="Center" Height="40" Width="120"/>
+                    </Grid>
+
+                </Grid>
+
+            </TabItem>
+            <TabItem Name="AllReservation" Header="Alle Reservaties">
+                <Grid  Name="GridAllReservations" Height="381">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <Grid Row="0">
+
+                        <dotNetKitControls:AutoCompleteComboBox
+                            Name="KlantenBestand"
+                            SelectedValuePath="Id"
+                            TextSearch.TextPath="Naam"
+                            ItemsSource="{Binding Path=Naam}"
+                         
+                            Margin="48,0,0,0" VerticalAlignment="Center"  DropDownClosed="KlantenBestand_Closed" RenderTransformOrigin="0.24,0.457" HorizontalAlignment="Left" Width="204" Height="24">
+                            <dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Naam}" FontWeight="Bold" />
+                                        <TextBlock>
+                                            ID (<Run Text="{Binding Klantnummer}"/>) | 
+                                            Adres(<Run Text="{Binding Adres}"/>)
+                                        </TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </dotNetKitControls:AutoCompleteComboBox.ItemTemplate>
+                        </dotNetKitControls:AutoCompleteComboBox>
+                        <Label Content="Klant:" HorizontalAlignment="Left" Margin="10,18,0,0" VerticalAlignment="Top"/>
+                        <xctk:DateTimePicker Visibility="{Binding IsChecked,ElementName=dateCheckBox,Converter={StaticResource dateCheckBox}}"  x:Name="StartDate_search" HorizontalAlignment="Left" Margin="464,15,0,0" VerticalAlignment="Top" Width="197" />
+                        <Label Content="Datum Reservatie:" Visibility="{Binding IsChecked,ElementName=dateCheckBox,Converter={StaticResource dateCheckBox}}"  Name="DateLabel" HorizontalAlignment="Left" Margin="354,13,0,21"/>
+                        <Button Content="Zoek" Click="SearchDateButton_click" Name="SearchDateButton" Visibility="{Binding IsChecked,ElementName=dateCheckBox,Converter={StaticResource dateCheckBox}}"  HorizontalAlignment="Left" Margin="684,13,0,0" VerticalAlignment="Top" Width="79"/>
+                        <CheckBox Content="Zoek Datum?" x:Name="dateCheckBox"  HorizontalAlignment="Left" Margin="257,20,0,0" VerticalAlignment="Top" Width="87" />
+                        <CheckBox Content="Naam + Datum" Name="radio_NaamPlusDatum" Visibility="{Binding IsChecked,ElementName=dateCheckBox,Converter={StaticResource dateCheckBox}}" HorizontalAlignment="Left" Margin="678,40,0,0" VerticalAlignment="Top"/>
+
+                    </Grid>
+                    <Grid Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="747*"/>
+                            <ColumnDefinition Width="47*"/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid ItemsSource="{Binding reservatieses}" CanUserAddRows="false" AutoGenerateColumns="False" Name="Overview" Margin="0,0,0,-251" Grid.ColumnSpan="2">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Reservatie Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Start Date" Binding="{Binding StartDatum}"/>
+                                <DataGridTextColumn Header="Eind Date" Binding="{Binding EindDateTime}"/>
+                                <DataGridTextColumn Header="Naam Voertuig" Binding="{Binding Voertuig.Naam}"/>
+                                <DataGridTextColumn Header="Start Locatie" Binding="{Binding StartLocatie.LocatieNaam}"/>
+                                <DataGridTextColumn Header="Eind Locatie" Binding="{Binding EindLocatie.LocatieNaam}"/>
+                                <DataGridTextColumn Header="Arragement " Binding="{Binding Arragement.Naam}"/>
+                                <DataGridTextColumn Header="TotaalNachtUren" Binding="{Binding Nachtuur}"/>
+                                <DataGridTextColumn Header="Overuren" Binding="{Binding TotaalOveruren }"/>
+                                <DataGridTextColumn Header="Korting" Binding="{Binding Korting }"/>
+                                <DataGridTextColumn Header="TotaalBedrag excl Btw" Binding="{Binding TotaalExclusiefBtw}"/>
+                                <DataGridTextColumn Header="TotaalBedrag incl Btw" Binding="{Binding TotaalInclusiefBtw}"/>
+                                <!--
+                                <DataGridTemplateColumn>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Button Command="Delete">Annuleer</Button>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                -->
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+
+
+        </TabControl>
+
+    </Grid>
+</Window>

@@ -1,0 +1,44 @@
+﻿<Window x:Class="StockManagement.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:StockManagement"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="MainWindow" Height="600" Width="1400">
+    <Grid Style="{StaticResource DarkMode}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0" Background="#212426">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="btnStock" Click="OpenStockWindow" Style="{StaticResource MainButtons}">
+                <DockPanel>
+                    <Image Source="/Icons/Stock.png" Width="35"/>
+                    <TextBlock VerticalAlignment="Center" Text="  Stock"/>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnDelivery" Grid.Row="1" Click="OpenDeliveryWindow" Style="{StaticResource MainButtons}">
+                <DockPanel>
+                    <Image Source="/Icons/Delivery.png"  Width="35"/>
+                    <TextBlock VerticalAlignment="Center" Text="  Delivery"/>
+                </DockPanel>
+            </Button>
+            <Button x:Name="btnOrder" Grid.Row="2" Click="OpenOrderWindow" Style="{StaticResource MainButtons}">
+                <DockPanel>
+                    <Image Source="/Icons/Order.png"  Width="35"/>
+                    <TextBlock VerticalAlignment="Center" Text="  Order"/>
+                </DockPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Frame x:Name="MainFrame" Padding="30" NavigationUIVisibility="Hidden"></Frame>
+        </Grid>
+    </Grid>
+</Window>

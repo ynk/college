@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" charset="utf-8" src="script.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <select id="persoonSelect" name="personen"  size="10" ></select>
+    <button id="nieuw" type="button">Nieuw</button>
+    <br>
+
+</body>
+<div id="inputForm">
+<p style="display:none;" id="index"></p>
+<label>Voornaam</label>
+<input type="text" required data-naam id="voorNaam"><br>
+<label>Familienaam</label>
+<input type="text" required data-famNaam id="familieNaam"><br>
+<label>Geboortedatum</label>
+<input type="date" required data-dobirth id="geboorteDatum"><br>
+<label>Email</label>
+<input type="email" required  data-email id="email"><br>
+<label>aantalKinderen</label>
+<input type="text" required data-aantalKinderen  id="aantalKinderen"><br>
+<button id="bewaar" type="button">Bewaar</button><br>
+
+<button id="clearls" type="button">Debug: Force Clear localstorage (Reset to old data)</button>
+
+
+<br>
+</div>
+</html>

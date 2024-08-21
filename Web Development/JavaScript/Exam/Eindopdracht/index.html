@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" type="image/png" href="img/favicon.ico"/>
+  <!-- Bootstrap CSS -->  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="style/style.css">
+  <script type="text/javascript" src="js/script.js"></script>
+
+  <title>Mijn super koele weathrrr app</title>
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse"">
+      <a class=" navbar-brand" href="#">Weather App</a>
+    <input class="form-control mr-sm-2" id="zoekbalk" type="search"  placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0 mr-1" id="zoekknop" type="submit">Search</button>
+    <button type="button" id="gpsbutton" class="btn btn-outline-info mr-1">GPS</button>
+    <button type="button" id="clear" class="btn btn-outline-danger mr-1">Clear</button>
+
+  </div>
+</nav>
+
+<body>
+  <br>
+
+  <div id="displaycontainer"  style="display:none;" class="container">
+    <h3>Vandaag</h3>
+    <div id="currentweather" class="card">
+      
+      <img id="weatherpicture"  class="card-img-top" style="height: 100px;width: 100px;">
+      <div class="card-body">
+        <h5 id="title" class="card-title"></h5>
+        <h3 id="degree" class="card-text"></h3>
+        <p class="text-muted"><small id="lastupdated" class="text-muted"></small></p>
+      </div>
+    </div>
+    <br>
+    <h3>Voorspelling (3 dagen)</h3>
+    <div class="card-group">
+      
+      <div id="0" class="card">
+        <img id="weatherpicture"  class="card-img-top" style="height: 100px;width: 100px;">
+        <div class="card-body">
+          <h5 id="title" class="card-title"></h5>
+          <p id="status" class="card-text"></p>
+          <p class="text-muted">Min Temp: <b<small id="min" class="card-text"></small></p>
+          <p class="text-muted">Max Temp: <small id="max" class="card-text"></small></p>
+        </div>
+        <div id="extrainfo"  style="display:none;" class="card-footer w-100 text-muted itemproduct">
+          <p class="text-muted">Datum <small data-datum id="datum" class="card-text font-weight-bold"></small></p>
+          <p class="text-muted">Kans op regen: <small data-chance id="regendata" class="card-text font-weight-bold"></small>%</p>
+          <p class="text-muted">Windsnelheid: <small data-windsnelheid id="windsnelheid" class="card-text font-weight-bold"></small></p>
+      </div>
+      </div>
+      <div id="1" class="card">
+        <img id="weatherpicture"  class="card-img-top" style="height: 100px;width: 100px;">
+        <div class="card-body">
+          <h5 id="title" class="card-title"></h5>
+          <p id="status" class="card-text"></p>
+          <p class="text-muted">Min Temp: <b<small id="min" class="card-text"></small></p>
+          <p class="text-muted">Max Temp: <small id="max" class="card-text"></small></p>
+        </div>
+        <div id="extrainfo"  style="display:none;" class="card-footer w-100 text-muted itemproduct">
+          <p class="text-muted">Datum <small data-datum id="datum" class="card-text font-weight-bold"></small></p>
+          <p class="text-muted">Kans op regen: <small data-chance id="regendata" class="card-text font-weight-bold"></small>%</p>
+          <p class="text-muted">Windsnelheid: <small data-windsnelheid id="windsnelheid" class="card-text font-weight-bold"></small></p>
+      </div>
+      </div>
+      
+      <div id="2" class="card">
+        <img id="weatherpicture"  class="card-img-top" style="height: 100px;width: 100px;">
+        <div class="card-body">
+          <h5 id="title" class="card-title"></h5>
+          <p id="status" class="card-text"></p>
+          <p class="text-muted">Min Temp: <b<small id="min" class="card-text"></small></p>
+          <p class="text-muted">Max Temp: <small id="max" class="card-text"></small></p>
+        </div>
+        <div id="extrainfo"  style="display:none;" class="card-footer w-100 text-muted itemproduct">
+          <p clas s="text-muted">Datum <small data-datum id="datum" class="card-text font-weight-bold"></small></p>
+          <p class="text-muted">Kans op regen: <small data-chance id="regendata" class="card-text font-weight-bold"></small>%</p>
+          <p class="text-muted">Windsnelheid: <small data-windsnelheid id="windsnelheid" class="card-text font-weight-bold"></small></p>
+      </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

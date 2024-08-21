@@ -1,0 +1,6 @@
+1) ja als je eens op de knop duuwt haalt hij het value uit localstorage en doet hij de nodige aanpassingen
+2) ja. eens dat je weer op de knop duuwt
+3) Ja.
+4) Neen, deze zit niet in die brower storage opgeslagen
+6) Ja als jet de knop maar induuwt haalt hij het value weer, aanpassing.
+7) nope

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MainActivity"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:orientation="horizontal"
+        android:weightSum="1" >
+
+    <TextView
+        android:id="@+id/ParkingNaam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.8"
+        android:text="Plaats"
+        android:textColor="#4C4F9E"
+        android:textSize="28sp"
+
+        android:textStyle="bold" />
+
+
+    <Button
+        android:id="@+id/ParkingIconView"
+        android:layout_width="wrap_content"
+        android:layout_weight="0.2"
+        android:textSize="28dp"
+        android:textColor="#FFFFFF"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:text="Hello"
+        />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        >
+        <TextView
+            android:id="@+id/text_Name"
+            android:paddingTop="8dp"
+            android:textSize="18dp"
+            android:paddingBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Naam"
+            android:textColor="#6a0dad"
+       />
+        <TextView
+            android:id="@+id/Parking_NaamInInfo"
+            android:paddingTop="4dp"
+            android:textSize="18dp"
+            android:paddingBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="maxCap"
+            />
+        <TextView
+            android:id="@+id/text_adress"
+            android:paddingTop="4dp"
+            android:textSize="18dp"
+            android:paddingBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Adres"
+            android:textColor="#6a0dad"
+            />
+        <TextView
+            android:id="@+id/Parking_Address"
+            android:paddingTop="4dp"
+            android:textSize="18dp"
+            android:paddingBottom="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="OpenGoogleMaps"
+            android:text="maxCap">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/text_contact"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Contact informatie"
+            android:textColor="#6a0dad"
+            />
+        <TextView
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="18dp"
+            android:id="@+id/Parking_contactInformatie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="maxCap"
+            />
+        <TextView
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="18dp"
+            android:id="@+id/text_totalCap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total capaciteit"
+            android:textColor="#6a0dad"
+            />
+
+        <TextView
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:textSize="18dp"
+            android:id="@+id/Parking_TotaalCap"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="maxCap"
+            />
+
+
+
+
+    </LinearLayout>
+</LinearLayout>
+
+
+
+
+

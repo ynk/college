@@ -1,0 +1,107 @@
+﻿<Page x:Class="StockManagement.OrderWindow.OrderWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:StockManagement.OrderWindow"
+      mc:Ignorable="d" 
+      Title="OrderWindow" Width="1214" Height="524">
+
+    <Grid Style="{StaticResource DarkMode}">
+        <TabControl Style="{StaticResource TabControl}">
+            <!--AddNewDelivery-->
+            <TabItem Style="{StaticResource TabItem}">
+                <TabItem.Header>
+                    <StackPanel Margin="2" Orientation="Horizontal">
+                        <Image Source="/Icons/Plus.png" Width="25"/>
+                        <TextBlock Text="  Add"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--Label + DatePicker + Buttons-->
+                    <Grid Grid.ColumnSpan="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Order date: " Style="{StaticResource InputLabels}" Grid.ColumnSpan="2"/>
+                        <DatePicker x:Name="dpAddOrderDate" Margin="10" Grid.Column="2"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Grid.ColumnSpan="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                            <ColumnDefinition Width="auto" />
+                        </Grid.ColumnDefinitions>
+                        <Label Content="Search comic: " Style="{StaticResource InputLabels}"/>
+                        <Label Content="Quantity: " Grid.Column="3" Style="{StaticResource InputLabels}"/>
+                        <TextBox x:Name="txtSearchComic" Grid.Column="1" Style="{StaticResource InputTextBox}" IsReadOnly="True" />
+                        <TextBox x:Name="txtQuantity" Grid.Column="4" Style="{StaticResource InputTextBox}" />
+                        <Button x:Name="btnAddComic" Grid.Column="5" Style="{StaticResource ManageButtons}"  Content="Add Comic" Click="btnAddComicForOrder_Click" />
+                        <Button x:Name="btnSeacrhComic" Grid.Column="2" Style="{StaticResource ManageButtons}"  Content="..."  Click="btnSearchComic_Click" />
+                    </Grid>
+
+                    <!--DataGrid-->
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <DataGrid x:Name="OrderDataGrid" Style="{StaticResource DataGrid}" AlternatingRowBackground="#40454a" IsReadOnly="True">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                                <DataGridTextColumn Header="Authors" Binding="{Binding AuthorNames}"/>
+                                <DataGridTextColumn Header="Publisher" Binding="{Binding PublisherName}"/>
+                                <DataGridTextColumn Header="Serie" Binding="{Binding SerieName}"/>
+                                <DataGridTextColumn Header="Serie°" Binding="{Binding SerieSeqNumber}"/>
+                                <DataGridTextColumn Header="Quantity" Binding="{Binding Stock}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Button x:Name="btnRemoveComicFromOrder" Grid.Column="5" Style="{StaticResource ManageButtons}"  Content="Remove Comic" Click="btnRemoveComicFromOrder_Click" />
+                    </Grid>
+                    <Grid Grid.Row="3" Grid.ColumnSpan="3">
+                        <Button x:Name="btnAddOrder" Style="{StaticResource ManageButtons}" Click="btnAddOrder_Click" Content="Save Order" />
+                    </Grid>
+                </Grid>
+            </TabItem>
+
+            <!--Overview Order-->
+        </TabControl>
+    </Grid>
+</Page>

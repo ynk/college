@@ -1,0 +1,334 @@
+﻿<Page x:Class="ComicCatalog.ComicWindow.ComicWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ComicCatalog.ComicWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="ComicWindow">
+
+    <Grid Style="{StaticResource DarkMode}">
+        <TabControl Style="{StaticResource TabControl}">
+            <!--Add Comic-->
+            <TabItem x:Name="TabAdd" Style="{StaticResource TabItem}">
+                <TabItem.Header>
+                    <StackPanel Margin="2" Orientation="Horizontal">
+                        <Image Source="/Icons/Plus.png" Width="25"/>
+                        <TextBlock Text="  Add"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <Label Content="Title:" Style="{StaticResource InputLabels}"/>
+                        <Label Content="Author:" Grid.Row="1" Style="{StaticResource InputLabels}"/>
+                        <DataGrid x:Name="dgAuthorsToAdd" Grid.Row="2" Height="150" Grid.ColumnSpan="2" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Author Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <Label Content="Publisher:" Grid.Row="3" Style="{StaticResource InputLabels}"/>
+                        <Label Content="Serie:" Grid.Row="4" Style="{StaticResource InputLabels}"/>
+                        <Label Content="Serie°:" Grid.Row="5" Style="{StaticResource InputLabels}"/>
+
+                        <TextBox x:Name="txtAddTitle" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+                        <TextBox x:Name="txtAddAuthor" Grid.Row="1" TextChanged="AutocompleteResults_Changed" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+                        <TextBox x:Name="txtAddPublisher" Grid.Row="3" Grid.Column="1" TextChanged="AutocompleteResults_Changed" Style="{StaticResource InputTextBox}"/>
+                        <TextBox x:Name="txtAddSerie" Grid.Row="4" Grid.Column="1" TextChanged="AutocompleteResults_Changed" Style="{StaticResource InputTextBox}"/>
+                        <TextBox x:Name="txtAddSerieNumber" Grid.Row="5" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+
+                        <Button x:Name="btnAddAuthor" Grid.Row="1" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnAddAuthor_Click">Add</Button>
+                        <Button x:Name="btnAddPublisher" Grid.Row="3" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnAddPublisher_Click">Add</Button>
+                        <Button x:Name="btnAddSerie" Grid.Row="4" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnAddSerie_Click">Add</Button>
+                        <Button x:Name="btnClear" Grid.Row="7" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnClear_Click">Clear</Button>
+                        <Button x:Name="btnAddComic" Grid.Row="7" Grid.Column="1" Style="{StaticResource ManageButtons}" Click="BtnAddComic_Click">Add Comic</Button>
+                        <Button x:Name="btnRemoveAuthor" Grid.Row="2" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnRemoveAuthor_Click">Remove Author</Button>
+                    </Grid>
+                    <!--AutocompleteGrid-->
+                    <Grid Grid.Column="1">
+                        <!--dgAuthorsFound-->
+                        <DataGrid x:Name="dgAuthorsFound" Visibility="Hidden" Grid.Column="3" Grid.Row="1" Width="300" Grid.RowSpan="4" Grid.ColumnSpan="2" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Author Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--dgPublishersFound-->
+                        <DataGrid x:Name="dgPublishersFound" SelectionChanged="DgSelectionAutocomplete_changed" Visibility="Hidden" Grid.Column="3" Grid.Row="1" Width="300" Grid.RowSpan="4" Grid.ColumnSpan="2" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Publisher Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--dgSeriesFound-->
+                        <DataGrid x:Name="dgSeriesFound" SelectionChanged="DgSelectionAutocomplete_changed" Visibility="Hidden" Grid.Column="3" Grid.Row="1" Width="300" Grid.RowSpan="4" Grid.ColumnSpan="2" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Serie Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <!--Search Comic-->
+            <TabItem x:Name="TabSearch" Style="{StaticResource TabItem}">
+                <TabItem.Header>
+                    <StackPanel Margin="2" Orientation="Horizontal">
+                        <Image Source="/Icons/MagGlass.png" Width="25"/>
+                        <TextBlock Text="  Search"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--InputVelden-->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <Label Content="Title:" Style="{StaticResource InputLabels}"/>
+                            <Label Content="Author:" Grid.Row="1" Style="{StaticResource InputLabels}"/>
+                            <Label Content="Publisher:" Grid.Row="3" Height="70" Style="{StaticResource InputLabels}"/>
+                            <Label Content="Serie:" Grid.Row="4" Height="70" Style="{StaticResource InputLabels}"/>
+                            <Label Content="Serie°:" Grid.Row="5" Height="70" Style="{StaticResource InputLabels}"/>
+
+
+                            <TextBox x:Name="txtSearchTitle" TextChanged="FilterComics" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+                            <TextBox x:Name="txtSearchAuthor" TextChanged="FilterComics" Grid.Row="1" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+                            <TextBox x:Name="txtSearchPublisher" TextChanged="FilterComics" Grid.Row="3" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+                            <TextBox x:Name="txtSearchSerie" TextChanged="FilterComics" Grid.Row="4" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+                            <TextBox x:Name="txtSearchSerieNumber" TextChanged="FilterComics" Grid.Row="5" Grid.Column="1" Style="{StaticResource InputTextBox}"/>
+
+                            <Button x:Name="btnSearchUpdateAuthor" Grid.Row="1" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnUpdateAuthor_Click">Add Author</Button>
+                            <Button x:Name="btnSearchRemoveAuthor" Grid.Row="2" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnRemoveAuthor_Click">Remove Author</Button>
+                            <Button x:Name="btnsearchAddNewPublisher" Grid.Row="3" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnAddPublisher_Click">Add New Publisher</Button>
+                            <Button x:Name="btnSearchAddNewSerie" Grid.Row="4" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnAddSerie_Click">Add New Serie</Button>
+                            <DataGrid x:Name="dgAuthorsToUpdate" SelectionChanged="DgAuthorsToUpdate_SelectionChanged"  Grid.Row="2" Grid.Column="1" Height="150"  AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                                <DataGrid.Resources>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                                        <Setter Property="FontWeight" Value="Bold"/>
+                                        <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                        <Setter Property="BorderBrush" Value="black"/>
+                                        <Setter Property="Padding" Value="5"/>
+                                        <Setter Property="FontSize" Value="14"/>
+                                    </Style>
+                                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                    <Style TargetType="{x:Type DataGridRow}">
+                                        <Setter Property="Background" Value="#252a2e"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Style>
+                                </DataGrid.Resources>
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Author Name" Binding="{Binding Name}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Button Grid.Row="6"  Style="{StaticResource ManageButtons}" Click="BtnUpdateComic_Click">Update Comic</Button>
+                            <Button Grid.Row="6" Grid.Column="1" Style="{StaticResource ManageButtons}" Click="BtnSearchComic_Remove_Click">Remove Comic</Button>
+                            <Button x:Name="btnSearchClear" Grid.Row="6" Grid.Column="2" Style="{StaticResource ManageButtons}" Click="BtnClear_Click">Clear</Button>
+                        </Grid>
+                    </Grid>
+                    <!--Comic Grid-->
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="3*"/>
+                            <RowDefinition Height="2*"/>
+                        </Grid.RowDefinitions>
+                        <!--Comic Result-->
+                        <DataGrid x:Name="dgSearchComics" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" SelectionChanged="Datagrid_Comics_SelectionChanged" Style="{StaticResource DataGrid}" AlternatingRowBackground="#40454a" IsReadOnly="True">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding ComicId}"/>
+                                <DataGridTextColumn Header="Title" Binding="{Binding Title}"/>
+                                <DataGridTextColumn Header="Author" Binding="{Binding AuthorNames}"/>
+                                <DataGridTextColumn Header="Publisher" Binding="{Binding PublisherName}"/>
+                                <DataGridTextColumn Header="Serie" Binding="{Binding SerieName}"/>
+                                <DataGridTextColumn Header="Serie°" Binding="{Binding SerieSeqNumber}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--Search Authors DataGrid-->
+                        <DataGrid x:Name="dgSearchAuthorsFound" Visibility="Hidden" SelectionChanged="GetSelectedGridItem_Changed" Grid.Row="1" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Author Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--Search Publisher DataGrid-->
+                        <DataGrid x:Name="dgSearchPublishersFound" Visibility="Hidden" SelectionChanged="GetSelectedGridItem_Changed" Grid.Row="1" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Publisher Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <!--Search Serie DataGrid-->
+                        <DataGrid x:Name="dgSearchSerieFound" Visibility="Hidden" SelectionChanged="GetSelectedGridItem_Changed" Grid.Row="1" AlternatingRowBackground="#40454a" IsReadOnly="True" Style="{StaticResource DataGrid}">
+                            <DataGrid.Resources>
+                                <Style TargetType="{x:Type DataGridColumnHeader}">
+                                    <Setter Property="FontWeight" Value="Bold"/>
+                                    <Setter Property="BorderThickness" Value="1,1,1,1"/>
+                                    <Setter Property="BorderBrush" Value="black"/>
+                                    <Setter Property="Padding" Value="5"/>
+                                    <Setter Property="FontSize" Value="14"/>
+                                </Style>
+                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                                <Style TargetType="{x:Type DataGridRow}">
+                                    <Setter Property="Background" Value="#252a2e"/>
+                                    <Setter Property="Foreground" Value="White"/>
+                                </Style>
+                            </DataGrid.Resources>
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                                <DataGridTextColumn Header="Serie Name" Binding="{Binding Name}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

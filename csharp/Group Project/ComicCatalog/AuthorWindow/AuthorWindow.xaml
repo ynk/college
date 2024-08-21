@@ -1,0 +1,72 @@
+﻿<Page x:Class="ComicCatalog.AuthorWindow.AuthorWindow"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ComicCatalog.AuthorWindow"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AuthorWindow">
+
+    <Grid Style="{StaticResource DarkMode}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--Image for background-->
+        <Image Grid.Column="1" Source="/Icons/Author.png" HorizontalAlignment="Center" Style="{StaticResource Image}"/>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Author Name:" Style="{StaticResource InputLabels}"/>
+            <TextBox x:Name="txtAuthors" Grid.Column="1" TextChanged="TxtAuthors_TextChanged" Style="{StaticResource InputTextBox}"/>
+
+            <DataGrid x:Name="dgAuthors" Grid.Row="1" Grid.ColumnSpan="2" SelectionChanged="DgAuthors_SelectionChanged" Style="{StaticResource DataGrid}" AlternatingRowBackground="#40454a" IsReadOnly="True">
+                <DataGrid.Resources>
+                    <Style TargetType="{x:Type DataGridColumnHeader}">
+                        <Setter Property="FontWeight" Value="Bold"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="BorderBrush" Value="black"/>
+                        <Setter Property="Padding" Value="5"/>
+                        <Setter Property="FontSize" Value="14"/>
+                    </Style>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#cf7a0a"/>
+                    <Style TargetType="{x:Type DataGridRow}">
+                        <Setter Property="Background" Value="#252a2e"/>
+                    </Style>
+                </DataGrid.Resources>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Id" Binding="{Binding Id}"/>
+                    <DataGridTextColumn Header="Author Name" Binding="{Binding Name}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+            <Button x:Name="BtnAddAuthor" Grid.Row="1" Click="BtnAddAuthor_Click" Style="{StaticResource ManageButtons}">Add</Button>
+            <Button x:Name="BtnUpdateAuthor" Grid.Row="2" Click="BtnUpdateAuthor_Click" Style="{StaticResource ManageButtons}">Update</Button>
+            <Button x:Name="BtnRemoveAuthor" Grid.Row="3" Click="BtnRemoveAuthor_Click" Style="{StaticResource ManageButtons}">Remove</Button>
+        </Grid>
+    </Grid>
+</Page>

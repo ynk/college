@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject>ComicCatalog.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Icons\Author.png" />
+    <None Remove="Icons\AuthorBlack.png" />
+    <None Remove="Icons\Close-Icon.png" />
+    <None Remove="Icons\comic.png" />
+    <None Remove="Icons\MagGlass.png" />
+    <None Remove="Icons\Plus.png" />
+    <None Remove="Icons\Publisher.png" />
+    <None Remove="Icons\Series.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLayer\BusinessLayer.csproj" />
+    <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\Author.png" />
+    <Resource Include="Icons\Comic.png" />
+    <Resource Include="Icons\MagGlass.png" />
+    <Resource Include="Icons\Plus.png" />
+    <Resource Include="Icons\Publisher.png" />
+    <Resource Include="Icons\Series.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

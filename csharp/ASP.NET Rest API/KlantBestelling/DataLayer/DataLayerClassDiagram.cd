@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="DataLayer.Repositories.BestellingRepository" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <AssociationLine Name="_context" Type="DataLayer.KlantBestellingContext">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.388" Y="-0.598" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>EAEAAAAAEAAABAAgAAQAIAAAAAAAAAAAAAAAAAACEAA=</HashCode>
+      <FileName>Repositories\BestellingRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.231" />
+  </Class>
+  <Class Name="DataLayer.Repositories.KlantRepository" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="3.25" Width="1.5" />
+    <AssociationLine Name="_context" Type="DataLayer.KlantBestellingContext">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-0.471" Y="1.225" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAhgCAAAAAAAAAgAAAAAAAAAAEABAAgAA=</HashCode>
+      <FileName>Repositories\KlantRepository.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="DataLayer.KlantBestellingContext" Collapsed="true">
+    <Position X="4" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAgAgAAIAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>KlantBestellingContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLayer.UnitOfWork" BaseTypeListCollapsed="true">
+    <Position X="7.25" Y="2.75" Width="1.5" />
+    <AssociationLine Name="_context" Type="DataLayer.KlantBestellingContext">
+      <MemberNameLabel ManuallyPlaced="true">
+        <Position X="-1.399" Y="-1.734" />
+      </MemberNameLabel>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAACAABAIAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UnitOfWork.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_context" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.1" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

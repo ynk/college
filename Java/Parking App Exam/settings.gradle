@@ -1,0 +1,2 @@
+rootProject.name='Mobile_Fetch'
+include ':app'

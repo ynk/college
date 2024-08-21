@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <script type="text/javascript" charset="utf-8" src="script.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery</title>
+</head>
+<style>
+    label{
+        font-size: 24px;
+    }
+</style>
+<body>
+    <input type="radio" name="options" value="Voorgrond"><label>Voorgrond</label>
+    <input type="radio" name="options" value="Achtergrond"><label>Achtergrond</label>
+    <input type="radio" name="options" value="Tekst"><label>Tekst</label>
+    <input type="radio" name="options" value="Hoogte"><label>Hoogte</label>
+    <input type="radio" name="options" value="Breedte"><label>Breedte</label>
+    <br>
+
+    <input onfocus="this.value=''" type="text" id="valueTextbox">
+    <input type="button" value="Stel in"><br>
+    <div id="canvas" style="border:1px solid #000000;height: 100px; width: 50%;"></div>
+    
+</body>
+</html>

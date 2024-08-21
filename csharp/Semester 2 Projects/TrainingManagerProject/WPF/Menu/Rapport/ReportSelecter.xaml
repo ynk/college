@@ -1,0 +1,14 @@
+﻿<Window x:Class="WPF.ReportSelecter"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF"
+        mc:Ignorable="d"
+        Title="ReportSelecter" Height="350" Width="287">
+    <Grid>
+        <Button Content="Loop Rapport" Click="loopRapport_Click" HorizontalAlignment="Left" Margin="20,27,0,0" VerticalAlignment="Top" Height="55" Width="81"/>
+        <Button Content="Fiets Rapport"  Click="fietsRapport_Click" HorizontalAlignment="Left" Margin="20,104,0,0" VerticalAlignment="Top" Height="55" Width="81"/>
+
+    </Grid>
+</Window>

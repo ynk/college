@@ -1,0 +1,95 @@
+﻿<Window x:Class="WPF.Menu.Rapport.LoopRapport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF.Menu.Rapport"
+        mc:Ignorable="d"
+        Title="LoopRapport" Height="513" Width="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="25*"/>
+            <ColumnDefinition Width="112*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+
+            
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10" Grid.ColumnSpan="3">
+            <TextBlock Text="Aantal loop sessies:"/>
+            <TextBlock Text="Looptraining tijd:"/>
+            <TextBlock Text="Looptraining afstand:"/>
+        </StackPanel>
+        <StackPanel Orientation="Vertical" Margin="10,10,10,10" Grid.Column="1" >
+            <TextBlock x:Name="aantalSessies"/>
+            <TextBlock x:Name="LoopTrainingTijd"/>
+            <TextBlock x:Name="LooptrainingAfstand"/>
+        </StackPanel>
+        <ComboBox Name="datePicker" Margin="38,10,10,344" MinWidth="150" SelectionChanged="datePicker_SelectionChanged" ItemStringFormat="MM-yyyy" Grid.Column="4"/>
+        <DataGrid x:Name="overView" AutoGenerateColumns="False" Grid.ColumnSpan="5" Margin="10,100,10,80">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding colum1, StringFormat={}{0:dd/MM/yy HH:mm}}" />
+                <DataGridTextColumn Header="Distance" Binding="{Binding colum2}"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding colum3}"/>
+                <DataGridTextColumn Header="Avarge speed. Snelheid" Binding="{Binding colum4}" />
+                <DataGridTextColumn Header="Training type" Binding="{Binding colum5}" />
+                <DataGridTextColumn Header="Comments" Binding="{Binding colum7}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="DeleteRun" Command="Delete">Delete Row</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <DataGrid x:Name="BestDistance" AutoGenerateColumns="False" Grid.ColumnSpan="5" Margin="10,339,10,-14">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding colum1, StringFormat={}{0:dd/MM/yy HH:mm}}" />
+                <DataGridTextColumn Header="Distance" Binding="{Binding colum2}"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding colum3}"/>
+                <DataGridTextColumn Header="Avarge speed. Snelheid" Binding="{Binding colum4}" />
+                <DataGridTextColumn Header="Training type" Binding="{Binding colum5}" />
+                <DataGridTextColumn Header="Comments" Binding="{Binding colum7}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="DeleteRun" Command="Delete">Delete Row</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <TextBlock x:Name="Best" HorizontalAlignment="Left" Margin="10,318,0,0" Text="Max Distance" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="71"/>
+        <DataGrid x:Name="BestSpeed" AutoGenerateColumns="False" Grid.ColumnSpan="5" Margin="10,398,10,-73">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="id" Binding="{Binding Id}"/>
+                <DataGridTextColumn Header="Datum" Binding="{Binding colum1, StringFormat=\{0:dd/MM/yy HH:mm\}}" />
+                <DataGridTextColumn Header="Distance" Binding="{Binding colum2}"/>
+                <DataGridTextColumn Header="Time" Binding="{Binding colum3}"/>
+                <DataGridTextColumn Header="Avarge speed. Snelheid" Binding="{Binding colum4}" />
+                <DataGridTextColumn Header="Training type" Binding="{Binding colum5}" />
+                <DataGridTextColumn Header="Comments" Binding="{Binding colum7}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="DeleteRun" Command="Delete" Content="Delete Row"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <TextBlock x:Name="max_speed" HorizontalAlignment="Left" Margin="10,377,0,0" Text="Max Speed" TextWrapping="Wrap" VerticalAlignment="Top" Height="16" Width="59"/>
+
+    </Grid>
+</Window>

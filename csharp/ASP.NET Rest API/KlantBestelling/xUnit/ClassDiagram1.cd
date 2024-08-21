@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="XUnitKlantBestellingService.ControllerTest.BestelControllerTest">
+    <Position X="0.75" Y="1.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ControllerTest\BestelControllerTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XUnitKlantBestellingService.ControllerTest.KlantControllerTest">
+    <Position X="4.25" Y="4.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAEIAAAAgQAAAAAAAAAAgAAAEKAAAAAQAAAIAACAA=</HashCode>
+      <FileName>ControllerTest\KlantControllerTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XUnitKlantBestellingService.Model.BestellingModelTest">
+    <Position X="2.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAABAAAAAAAAAAAAEAABAAAAAAAAAIAAA=</HashCode>
+      <FileName>Model\BestellingModelTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XUnitKlantBestellingService.Model.KlantModelTest">
+    <Position X="0.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABCgAAAAAAAAAAAACAAAAAAAAAAAAAAAABABAAAAAA=</HashCode>
+      <FileName>Model\KlantModelTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XUnitKlantBestellingService.Test.BestelTest">
+    <Position X="2.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAIAAAAAAAAEAAAAAAACAAAIAAAAAAAAAAAAI=</HashCode>
+      <FileName>Test\BestelTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="XUnitKlantBestellingService.Test.KlantTest">
+    <Position X="4.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABABAgAAAAAAAAAKAARAAAAAAAIAAAAAAAAAAEIAAA=</HashCode>
+      <FileName>Test\KlantTest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

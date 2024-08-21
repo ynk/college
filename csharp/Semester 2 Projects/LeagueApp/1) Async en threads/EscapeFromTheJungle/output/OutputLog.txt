@@ -1,0 +1,368 @@
+write wood 1 to database - start
+write wood 0 to database - start
+write wood 0 to database - end
+write wood 1 to database - end
+forest:1) Guido step:1 jumped 235
+forest:0) Jo step:1 jumped 727
+forest:0) Guido step:1 jumped 5
+forest:1) Mike step:1 jumped 680
+forest:1) Bryan step:1 jumped 322
+forest:0) Micheal step:1 jumped 568
+forest:1) Mike step:1 jumped 338
+forest:0) Zakery step:1 jumped 112
+forest:1) Guido step:1 jumped 712
+forest:0) Guido step:1 jumped 664
+forest:1) Kim step:1 jumped 183
+forest:0) Guido step:2 jumped 5
+forest:1) Guido step:2 jumped 235
+forest:1) Mike step:2 jumped 680
+forest:0) Micheal step:2 jumped 568
+forest:0) Zakery step:2 jumped 112
+forest:1) Bryan step:2 jumped 322
+forest:0) Guido step:2 jumped 664
+forest:0) Jo step:3 jumped 159
+forest:1) Guido step:2 jumped 712
+forest:1) Kim step:2 jumped 183
+forest:0) Guido step:3 jumped 381
+forest:1) Guido step:3 jumped 32
+forest:0) Micheal step:3 jumped 109
+forest:0) Zakery step:3 jumped 652
+forest:1) Mike step:3 jumped 143
+forest:0) Guido step:3 jumped 563
+forest:1) Mike step:3 jumped 407
+forest:0) Jo step:4 jumped 181
+forest:1) Guido step:3 jumped 93
+forest:0) Guido step:4 jumped 3
+
+forest:0) Micheal step:4 jumped 2
+
+forest:0) Zakery step:4 jumped 5
+
+forest:0) Jo step:5 jumped 176
+forest:1) Mike step:4 jumped 4
+forest:1) Guido step:4 jumped 421
+forest:0) Micheal step:5 jumped 552
+forest:1) Kim step:4 jumped 569
+forest:0) Zakery step:5 jumped 526
+forest:1) Guido step:5 jumped 179
+forest:1) Mike step:5 jumped 107
+forest:0) Jo step:6 jumped 34
+forest:1) Mike step:5 jumped 612
+forest:1) Guido step:5 jumped 245
+forest:0) Zakery step:6 jumped 146
+forest:1) Kim step:5 jumped 604
+forest:1) Guido step:6 jumped 429
+forest:0) Guido step:7 jumped 87
+forest:1) Mike step:6 jumped 523
+forest:0) Micheal step:7 jumped 679
+forest:1) Mike step:6 jumped 203
+forest:0) Zakery step:7 jumped 642
+forest:0) Guido step:8 jumped 170
+forest:1) Kim step:6 jumped 735
+forest:1) Guido step:7 jumped 746
+forest:1) Mike step:7 jumped 530
+forest:0) Zakery step:8 jumped 
+forest:1) Kim step:7 jumped 527
+forest:0) Guido step:9 jumped 622
+forest:1) Guido step:8 jumped 80
+forest:0) Micheal step:9 jumped 419
+forest:1) Mike step:8 jumped 295
+forest:0) Zakery step:9 jumped 123
+forest:0) Guido step:10 jumped 282
+forest:1) Mike step:8 jumped 640
+forest:1) Kim step:8 jumped 96
+forest:0) Zakery step:10 jumped 5
+
+forest:1) Mike step:9 jumped 375
+forest:1) Mike step:9 jumped 9
+forest:1) Kim step:9 jumped 732
+forest:0) Zakery step:11 jumped 258
+forest:0) Guido step:12 jumped 523
+forest:1) Mike step:10 jumped 247
+forest:0) Micheal step:12 jumped 719
+forest:0) Zakery step:12 jumped 2
+
+forest:1) Kim step:10 jumped 446
+forest:0) Guido step:13 jumped 530
+forest:0) Micheal step:13 jumped 
+forest:1) Mike step:11 jumped 601
+forest:1) Mike step:11 jumped 97
+forest:0) Guido step:14 jumped 295
+forest:0) Micheal step:14 jumpe
+183
+forest:0) Zakery step:14 jumped 65
+forest:0) Guido step:15 jumped 375
+forest:1) Mike step:12 jumped 544
+forest:1) Mike step:12 jumped 287
+forest:1) Kim step:12 jumped 770
+forest:0) Zakery step:15 jumped 230
+forest:0) Guido step:16 jumped 247
+forest:1) Guido step:13 jumped 253
+forest:1) Mike step:13 jumped 464
+forest:1) Mike step:13 jumped 53
+forest:1) Kim step:13 jumped 724
+forest:0) Guido step:17 jumped 601
+forest:1) Guido step:14 jumped 713
+forest:1) Mike step:14 jumped 151
+forest:0) Guido step:18 jumped 544
+forest:1) Mike step:14 jumped 224
+forest:1) Kim step:14 jumped 695
+forest:1) Guido step:15 jumped 736
+forest:0) Zakery step:18 jumped 529
+forest:0) Guido step:19 jumped 46
+forest:0) Micheal step:19 jumped 527
+forest:1) Mike step:15 jumped 536
+forest:0) Zakery step:19 jumped 458
+forest:1) Kim step:15 jumped 185
+forest:1) Guido step:16 jumped 469
+forest:0) Guido step:20 jumped 151
+forest:0) Micheal step:20 jumped 
+
+forest:0) Zakery step:20 jumped 704
+forest:1) Mike step:16 jumped 209
+forest:1) Kim step:16 jumped 223
+forest:1) Guido step:17 jumped 409
+forest:0) Zakery step:21 jumped 702
+forest:1) Mike step:17 jumped 114
+forest:1) Mike step:17 jumped 710
+forest:0) Guido step:22 jumped 733
+forest:0) Micheal step:22 jumped 446
+forest:1) Kim step:17 jumped 54
+forest:0) Zakery step:22 jumped 264
+forest:1) Guido step:18 jumped 760
+forest:1) Mike step:18 jumped 293
+forest:0) Guido step:23 jumped 114
+forest:1) Mike step:18 jumped 611
+
+forest:1) Kim step:18 jumped 414
+forest:0) Guido step:24 jumped 293
+forest:1) Guido step:19 jumped 372
+forest:1) Mike step:19 jumped 402
+forest:0) Micheal step:24 jumped 770
+forest:1) Mike step:19 jumped 30
+forest:0) Zakery step:24 jumped 443
+forest:0) Guido step:25 jumped 402
+forest:1) Kim step:19 jumped 435
+forest:1) Guido step:20 jumped 202
+
+forest:1) Mike step:20 jumped 696
+forest:1) Mike step:20 jumped 712
+forest:0) Guido step:26 jumped 696
+forest:1) Kim step:20 jumped 207
+forest:1) Guido step:21 jumped 581
+forest:0) Zakery step:26 jumped 655
+forest:0) Guido step:27 jumped 128
+forest:1) Mike step:21 jumped 128
+forest:0) Micheal step:27 jumped
+forest:1) Kim step:21 jumped 346
+0
+forest:1) Guido step:22 jumped 73
+forest:1) Mike step:22 jumped 79
+23
+forest:1) Mike step:22 jumped 421
+forest:1) Kim step:22 jumped 418
+forest:0) Guido step:29 jumped 707
+forest:1) Guido step:23 jumped 161
+forest:1) Mike step:23 jumped 707
+forest:0) Zakery step:29 jumped 574
+forest:0) Guido step:30 jmped 245
+forest:0) Micheal step:30 jumpe
+414
+forest:0) Zakery step:30 jumped 638
+forest:1) Guido step:24 jumped 378
+forest:0) Guido step:31 jumped 13
+forest:0) Micheal step:31 jumped
+35
+forest:0) Zakery step:31 jumped 16
+forest:1) Mike step:25 jumped 131
+forest:1) Kim step:25 jumped 644
+forest:0) Zakery step:32 jumped 324
+forest:1) Guido step:26 jumped 327
+forest:0) Guido step:33 jumped 438
+forest:1) Mike step:26 jumped 166
+forest:1) Kim step:26 jumped 122
+forest:1) Guido step:27 jumped 301
+forest:0) Zakery step:33 jumped 193
+forest:0) Guido step:34 jumped 66
+forest:0) Micheal step:34 jumped 418
+forest:1) Guido step:28 jumped 383
+forest:0) Guido step:35 jumped 39
+forest:0) Micheal step:35 jumped
+7
+forest:0) Zakery step:35 jumped 
+forest:0) Micheal step:36 jumped 
+7
+forest:1) Kim step:29 jumped 379
+forest:0) Zakery step:36 jumped 629
+forest:1) Guido step:30 jumped 615
+forest:0) Micheal step:37 jumped 644
+forest:1) Kim step:30 jumped 295
+forest:0) Zakery step:37 jumped 541
+forest:0) Micheal step:38 jumped 122
+forest:0) Zakery step:38 jumped 
+forest:1) Guido step:32 jumped 708
+forest:0) Micheal step:39 jumped 31
+forest:1) Kim step:32 jumped 247
+forest:0) Micheal step:40 jumped 7
+
+forest:1) Kim step:33 jumped 601
+forest:1) Guido step:34 jumped 289
+forest:0) Zakery step:41 jumped 155
+forest:1) Kim step:34 jumped 544
+forest:1) Guido step:35 jumped 229
+forest:0) Zakery step:42 jumped 305
+forest:1) Kim step:35 jumped 464
+forest:0) Micheal step:43 jumped 3
+
+forest:1) Kim step:36 jumped 151
+forest:0) Zakery step:43 jumped 376
+forest:0) Micheal step:44 jumped 
+forest:0) Zakery step:44 jumped 345
+forest:1) Kim step:37 jumped 312
+forest:0) Micheal step:45 jumped 601
+forest:1) Guido step:38 jumped 631
+forest:0) Zakery step:45 jumped 382
+forest:1) Kim step:38 jumped 733
+forest:0) Micheal step:46 jumped 544
+forest:1) Guido step:39 jumped 180
+forest:0) Zakery step:46 jumped 565
+forest:1) Kim step:39 jumped 114
+forest:0) Micheal step:47 jumped 4
+
+forest:1) Kim step:40 jumped 293
+forest:0) Micheal step:48 jumped 151
+forest:1) Guido step:41 jumped 233
+forest:0) Zakery step:48 jumped 
+4
+forest:1) Guido step:42 jumped 354
+forest:1) Kim step:42 jumped 696
+forest:0) Zakery step:49 jumped 524
+forest:0) Micheal step:50 jumped 733
+forest:1) Guido step:43 jumped 434
+forest:1) Kim step:43 jumped 128
+forest:0) Zakery step:50 jumped 71
+forest:1) Guido step:44 jumped 363
+forest:0) Zakery step:51 jumped
+17
+forest:0) Micheal step:52 jumped 2
+
+forest:0) Zakery step:52 jumped 610
+forest:1) Kim step:45 jumped 707
+forest:1) Guido step:46 jumped 698
+forest:0) Zakery step:53 jumped 
+3
+forest:1) Guido step:47 jumped 120
+forest:0) Zakery step:54mped 131
+forest:0) Micheal step:55 jumped 128
+forest:1) Guido step:48 jumped 187
+forest:0) Zakery step:55 jumped 747
+forest:1) Kim step:48 jumped 166
+forest:0) Micheal step:56 jumped 7
+forest:0) Zakery step:56 jumped 
+7
+forest:0) Micheal step:57 jumped 707
+forest:1) Guido step:50 jumped 146
+forest:0) Zakery step:57 jumped 597
+forest:1) Kim step:50 jumped 669
+forest:1) Guido step:51 jumped 526
+forest:0) Zakery step:58 jumped 452
+forest:0) Micheal step:59 jumped 131
+forest:1) Guido step:52 jumped 652
+forest:0) Zakery step:59 jumped 701
+forest:1) Guido step:53 jumped 586
+forest:0) Micheal step:60 jumped 166
+forest:1) Guido step:54 jumped 112
+forest:0) Zakery step:60 jumped 
+6
+forest:1) Guido step:56 jumped 613
+forest:0) Micheal step:61 jumped 438
+forest:1) Guido step:57 jumped 560
+forest:1) Guido step:58 jumped 98
+forest:0) Micheal step:62 jumped 669
+forest:0) Zakery step:62 jumped 42
+forest:1) Guido step:59 jumped 228
+forest:1) Guido step:60 jumped 318
+forest:0) Zakery step:63 jumped 416
+forest:1) Guido step:61 jumped 257
+forest:0) Zakery step:64 jumped 362
+forest:1) Guido step:62 jumped 529
+forest:1) Guido step:63 jumped 458
+forest:0) Zakery step:65 jumped 2
+forest:1) Guido step:64 jumped 647
+forest:0) Zakery step:67 jumped 73
+forest:0) Zakery step:68 jumped 320
+forest:1) Guido step:66 jumped 230
+forest:0) Zakery step:69 jumped 8
+forest:1) Guido step:67 jumped 657
+forest:0) Zakery step:70 jumped 674
+forest:1) Guido step:68 jumped 241
+write bitmap routes wood : 0 - start
+forest:1) Guido step:69 jumped 258
+forest:1) Guido step:70 jumped 548
+forest:1) Guido step:71 jumped 123
+forest:1) Guido step:72 jumped 56
+forest:1) Guido step:73 jumped 344
+forest:1) Guido step:74 jumped 136
+forest:1) Guido step:75 jumped 237
+forest:1) Guido step:76 jumped 328
+wrote bitmap routes for forest(0)
+wood : 0 writes log - start
+forest:1) Guido step:77 jumped 226
+forest:1) Guido step:78 jumped 496
+forest:1) Guido step:79 jumped 514
+forest:1) Guido step:80 jumped 511
+forest:1) Guido step:81 jumped 693
+forest:1) Guido step:82 jumped 368
+forest:1) Guido step:83 jumped 445
+forest:1) Guido step:84 jumped 103
+forest:1) Guido step:85 jumped 339
+forest:1) Guido step:86 jumped 562
+forest:1) Guido step:87 jumped 577
+forest:1) Guido step:88 jumped 512
+forest:1) Guido step:89 jumped 598
+forest:1) Guido step:90 jumped 441
+forest:1) Guido step:91 jumped 265
+forest:1) Guido step:92 jumped 139
+forest:1) Guido step:93 jumped 399
+forest:1) Guido step:94 jumped 649
+forest:1) Guido step:95 jumped 519
+forest:1) Guido step:96 jumped 771
+forest:1) Guido step:97 jumped 533
+forest:1) Guido step:98 jumped 772
+forest:1) Guido step:99 jumped 596
+forest:1) Guido step:100 jumped 706
+forest:1) Guido step:101 jumped 391
+forest:1) Guido step:102 jumped 218
+forest:1) Guido step:103 jumped 660
+forest:1) Guido step:104 jumped 466
+forest:1) Guido step:105 jumped 622
+forest:1) Guido step:106 jumped 282
+forest:1) Guido step:107 jumped 107
+forest:1) Guido step:108 jumped 523
+forest:1) Guido step:109 jumped 530
+forest:1) Guido step:110 jumped 295
+forest:1) Guido step:111 jumped 375
+forest:1) Guido step:112 jumped 247
+forest:1) Guido step:113 jumped 601
+forest:1) Guido step:114 jumped 544
+forest:1) Guido step:115 jumped 464
+forest:1) Guido step:116 jumped 151
+forest:1) Guido step:117 jumped 312
+forest:1) Guido step:118 jumped 733
+forest:1) Guido step:119 jumped 114
+forest:1) Guido step:120 jumped 293
+forest:1) Guido step:121 jumped 402
+forest:1) Guido step:122 jumped 696
+forest:1) Guido step:123 jumped 128
+forest:1) Guido step:124 jumped 79
+forest:1) Guido step:125 jumped 707
+forest:1) Guido step:126 jumped 758
+forest:1) Guido step:127 jumped 131
+forest:1) Guido step:128 jumped 166
+forest:1) Guido step:129 jumped 438
+forest:1) Guido step:130 jumped 669
+forest:1) Guido step:131 jumped 392
+write bitmap routes wood : 1 - start
+wrote bitmap routes for forest(1)
+wood : 1 writes log - start
+
